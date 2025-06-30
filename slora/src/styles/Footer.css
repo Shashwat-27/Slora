@@ -1,0 +1,58 @@
+.footer {
+  background: linear-gradient(to right, #1a1a2e, #16213e);
+  color: #fff;
+}
+
+.footer-divider {
+  border-color: rgba(255, 255, 255, 0.1);
+  margin: 2rem 0;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  color: white;
+  background-color: rgba(79, 70, 229, 0.8);
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  background-color: rgba(124, 58, 237, 1);
+  transform: translateY(-2px);
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer-links .list-group-item {
+  background: transparent;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem 0;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.footer-links .list-group-item:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+.app-buttons img {
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
+.app-buttons img:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .footer h5 {
+    margin-top: 1.5rem;
+  }
+} 

@@ -1,0 +1,374 @@
+.hero-section {
+  position: relative;
+  padding: 40px 0 60px;
+  overflow: hidden;
+  background: linear-gradient(to bottom right, #f8f9fa, #ffffff);
+}
+
+.hero-bg-elements {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.hero-shape-1, .hero-shape-2, .hero-shape-3 {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hero-shape-1 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.15) 0%, rgba(79, 70, 229, 0) 70%);
+  top: -150px;
+  right: -100px;
+}
+
+.hero-shape-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.1) 0%, rgba(124, 58, 237, 0) 70%);
+  bottom: -200px;
+  left: -200px;
+}
+
+.hero-shape-3 {
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, rgba(16, 185, 129, 0) 70%);
+  top: 40%;
+  right: 10%;
+}
+
+.hero-dots {
+  position: absolute;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-image-container {
+  position: relative;
+  padding: 20px;
+  z-index: 2;
+  overflow: visible;
+  margin-top: 20px;
+}
+
+.hero-main-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  border: 8px solid white;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2) !important;
+  transition: all 0.5s ease;
+  transform: perspective(1000px) rotateY(-5deg);
+}
+
+.hero-main-image:hover {
+  transform: perspective(1000px) rotateY(-2deg) translateY(-10px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.3) !important;
+}
+
+.floating-card {
+  position: absolute;
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15) !important;
+  z-index: 10;
+  animation: float 4s ease-in-out infinite;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.floating-card-1 {
+  top: 0;
+  right: -20px;
+  animation-delay: 0s;
+  transform: rotate(3deg);
+}
+
+.floating-card-2 {
+  bottom: 50px;
+  left: -20px;
+  animation-delay: 1s;
+  transform: rotate(-2deg);
+}
+
+.floating-card-3 {
+  bottom: 20%;
+  right: 15%;
+  animation-delay: 2s;
+  transform: rotate(2deg);
+}
+
+.card-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-avatar {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  z-index: 11;
+  animation: float 4s ease-in-out infinite;
+}
+
+.floating-avatar img {
+  width: 100%;
+  height: 100%;
+  border: 3px solid white;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.floating-avatar-1 {
+  top: 20%;
+  left: -15px;
+  animation-delay: 0.5s;
+}
+
+.floating-avatar-2 {
+  top: 40%;
+  right: -20px;
+  animation-delay: 1.5s;
+}
+
+.floating-avatar-3 {
+  bottom: 15%;
+  left: 10%;
+  animation-delay: 2s;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.animate-in {
+  animation: fadeIn 1s ease-out;
+}
+
+.animate-in-delayed {
+  animation: fadeIn 1s ease-out 0.3s both;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 992px) {
+  .floating-card, .floating-avatar, .floating-icon {
+    display: none;
+  }
+  
+  .hero-main-image {
+    transform: none;
+    border-width: 5px;
+  }
+  
+  .hero-main-image:hover {
+    transform: translateY(-5px);
+  }
+  
+  .hero-image-container {
+    padding: 10px;
+  }
+  
+  .hero-section {
+    padding: 80px 0 40px;
+  }
+}
+
+/* Add styles for the company logos */
+.company-logo {
+  height: 30px;
+  width: auto;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  filter: grayscale(100%);
+}
+
+.company-logo:hover {
+  opacity: 1;
+  filter: grayscale(0);
+}
+
+.trust-logos {
+  border-top: 1px solid rgba(0,0,0,0.1);
+  padding-top: 1.5rem;
+}
+
+/* Floating icons styling */
+.floating-icon {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  z-index: 3;
+  animation: float 5s ease-in-out infinite;
+  font-size: 20px;
+}
+
+.floating-icon-1 {
+  top: 15%;
+  right: 15%;
+  animation-delay: 1s;
+}
+
+.floating-icon-2 {
+  bottom: 30%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.floating-icon-3 {
+  bottom: 15%;
+  right: 25%;
+  animation-delay: 2s;
+}
+
+/* Enhance the hero section heading */
+.hero-content h1 {
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  background: linear-gradient(to right, #333, #0d6efd);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.hero-content h1 span.text-primary {
+  background: linear-gradient(135deg, #0d6efd, #6610f2);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  position: relative;
+}
+
+.hero-content h1 span.text-primary::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(135deg, #0d6efd, #6610f2);
+  border-radius: 2px;
+}
+
+/* Additional decorative elements */
+.decorative-shapes .shape {
+  position: absolute;
+  z-index: 0;
+  border-radius: 50%;
+}
+
+/* Add a subtle gradient overlay to the hero section */
+.hero-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top right, rgba(13, 110, 253, 0.05), transparent 70%);
+  pointer-events: none;
+}
+
+/* Utility classes */
+.bg-primary-soft {
+  background-color: rgba(13, 110, 253, 0.1);
+  padding: 10px;
+}
+
+.bg-success-soft {
+  background-color: rgba(25, 135, 84, 0.1);
+  padding: 10px;
+}
+
+.bg-warning-soft {
+  background-color: rgba(255, 193, 7, 0.1);
+  padding: 10px;
+}
+
+/* Classic Hero Section styling */
+.hero-classic {
+  padding: 40px 0 60px;
+}
+
+.classic-hero-image {
+  position: relative;
+  text-align: center;
+}
+
+.classic-hero-image img {
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+  border: 5px solid white;
+  max-height: 450px;
+  object-fit: cover;
+}
+
+/* Adjust existing styles for more compact layout */
+@media (max-width: 992px) {
+  .hero-classic {
+    padding: 60px 0 40px;
+  }
+  
+  .classic-hero-image img {
+    border-width: 3px;
+    max-height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-classic {
+    padding: 40px 0 30px;
+  }
+} 

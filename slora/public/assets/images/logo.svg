@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="16" cy="16" r="16" fill="#4F46E5" opacity="0.1"/>
+  
+  <!-- Book Shape -->
+  <path d="M10 8C10 7.44772 10.4477 7 11 7H21C21.5523 7 22 7.44772 22 8V24C22 24.5523 21.5523 25 21 25H11C10.4477 25 10 24.5523 10 24V8Z" fill="#4F46E5"/>
+  
+  <!-- Pages -->
+  <path d="M12 10H20V12H12V10Z" fill="white"/>
+  <path d="M12 14H20V16H12V14Z" fill="white"/>
+  <path d="M12 18H20V20H12V18Z" fill="white"/>
+  
+  <!-- Decorative Elements -->
+  <circle cx="16" cy="16" r="2" fill="#818CF8"/>
+  <circle cx="16" cy="16" r="4" stroke="#818CF8" stroke-width="1" fill="none"/>
+</svg> 

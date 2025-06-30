@@ -1,0 +1,139 @@
+/* Gamification Dashboard Styles */
+
+/* Badge styles */
+.badge-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.1) 0%, rgba(124, 58, 237, 0.1) 100%);
+  color: #4F46E5;
+  transition: all 0.3s ease;
+}
+
+.badge-item:hover .badge-icon {
+  transform: scale(1.05);
+  box-shadow: 0 5px 15px rgba(79, 70, 229, 0.15);
+}
+
+.badge-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Leaderboard styles */
+.rank-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.rank-1 {
+  background-color: #FFD700;
+  color: #000;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.rank-2 {
+  background-color: #C0C0C0;
+  color: #000;
+  box-shadow: 0 0 10px rgba(192, 192, 192, 0.5);
+}
+
+.rank-3 {
+  background-color: #CD7F32;
+  color: #000;
+  box-shadow: 0 0 10px rgba(205, 127, 50, 0.5);
+}
+
+.rank-other {
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+/* Challenge card styles */
+.challenge-card {
+  transition: all 0.2s ease;
+  border-width: 1px;
+  border-left-width: 4px;
+}
+
+.challenge-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+}
+
+.challenge-card.border-success {
+  border-left-color: #198754;
+}
+
+.challenge-card.border-light {
+  border-left-color: #4F46E5;
+}
+
+/* XP progress bar styling */
+.progress-bar {
+  background: linear-gradient(90deg, #4F46E5 0%, #7C3AED 100%);
+  transition: width 0.5s ease;
+}
+
+.progress-bar.bg-success {
+  background: linear-gradient(90deg, #198754 0%, #20c997 100%);
+}
+
+/* Animation for XP gain */
+@keyframes xpGainPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(79, 70, 229, 0.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.xp-gain {
+  animation: xpGainPulse 0.5s ease;
+}
+
+/* Level badge */
+.level-badge {
+  background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+  color: white;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  display: inline-block;
+}
+
+/* Screen responsiveness */
+@media (max-width: 992px) {
+  .badge-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .badge-item {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .badge-icon {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .rank-badge {
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+  }
+} 

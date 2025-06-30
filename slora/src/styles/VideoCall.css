@@ -1,0 +1,177 @@
+.video-call-panel {
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Grid layout for videos */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 8px;
+  padding: 8px;
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Single video container */
+.video-participant {
+  background-color: #2d2d2d;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 16/9;
+  position: relative;
+}
+
+/* Layout changes when there's only one participant */
+.video-grid:has(.video-participant:only-child) {
+  grid-template-columns: 1fr;
+}
+
+.video-grid:has(.video-participant:only-child) .video-participant {
+  width: 100%;
+  height: 100%;
+}
+
+/* Local participant styles */
+.local-participant {
+  border: 2px solid #3180e7;
+}
+
+/* Video containers */
+.video-container, .video-placeholder {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-element-container {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.participant-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* User avatar when video is off */
+.user-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #3180e7;
+}
+
+/* Participant info overlay */
+.participant-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.participant-name {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.participant-controls {
+  display: flex;
+  gap: 8px;
+}
+
+/* Call controls */
+.call-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background-color: #222;
+  border-top: 1px solid #333;
+}
+
+.control-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.leave-button {
+  background-color: #d93025;
+  border-color: #d93025;
+}
+
+.leave-button:hover {
+  background-color: #b7261e;
+  border-color: #b7261e;
+}
+
+/* Loading and error states */
+.connecting-state, .connection-error {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  text-align: center;
+}
+
+.error-icon {
+  font-size: 3rem;
+  margin-bottom: 16px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .video-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+  
+  .control-button {
+    width: 42px;
+    height: 42px;
+    font-size: 1rem;
+  }
+  
+  .user-avatar {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Animation for connecting state */
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.connecting-state p {
+  animation: pulse 1.5s infinite ease-in-out;
+} 
